@@ -92,6 +92,7 @@ class battleResult:
             return ""
         return self._remarks
 
+    #棋譜
     def setKifu(self,kifu):
         self._kifu = kifu
     def getKifu(self):

@@ -7,9 +7,12 @@ class kifuListPage():
     _search_baseurl = "https://www.shogidojo.net/kifu/?duid="
     _link_baseurl = "https://www.shogidojo.net"
 
+	#コンストラクタ。
+    #スクレイピングを行うのでセッション必須
     def __init__(self,session):
         self._session = session
     
+    #２４ID
     def setId(self,id):
         self._id = id
     
