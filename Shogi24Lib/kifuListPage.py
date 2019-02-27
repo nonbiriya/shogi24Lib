@@ -3,7 +3,7 @@
 from . import battleResult
 from bs4 import BeautifulSoup
 
-class kifuListPage():
+class kifuListPage:
     _search_baseurl = "https://www.shogidojo.net/kifu/?duid="
     _link_baseurl = "https://www.shogidojo.net"
 

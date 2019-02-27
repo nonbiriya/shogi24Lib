@@ -18,11 +18,17 @@ class login:
             self._userName = id
         return self._userName
     
+    def getUserName(self):
+        return self._userName
+    
     def setUserPass(self,password):
         if password is None:
             self._userPass = self._loginInfo.getUserPass()
         else:
             self._userPass = password
+        return self._userPass
+    
+    def getUserPass(self):
         return self._userPass
 
     def getSession(self):
