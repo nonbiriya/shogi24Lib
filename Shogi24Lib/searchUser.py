@@ -8,20 +8,21 @@ class searchUser():
     _memberSearchResultList = []
     _searchUrl = "https://web.shogidojo.net/24member/meibo/"
 
-    def __init__(self,session):
+    def __init__(self,session,userName):
         self._session = session
+        self._userName = userName
 
 #検索結果をクラスに格納する
-    def search(self,userName):
-        searchResult = self.getSearchResult(userName)
+    def search(self):
+        searchResult = self.getSearchResult()
         soup = BeautifulSoup(searchResult.content, "html.parser")
         searchResultTable = self.findTableTag(soup)
         members = self.findTrTags(searchResultTable)
         return self.getMembers(members)
 
 
-    def getSearchResult(self,userName):
-        payload = {'nameHead': userName,'strength':'0','games':'0','localityHead':'','sub':'検索'}
+    def getSearchResult(self):
+        payload = {'nameHead': self._userName,'strength':'0','games':'0','localityHead':'','sub':'検索'}
         return self._session.post(self._searchUrl, data=payload)
 
     def findTableTag(self,soup):
@@ -57,16 +58,16 @@ class searchUser():
         return self._memberSearchResultList
 
 #検索結果格納クラスから一致した結果を返す
-    def match(self,userName):
+    def match(self):
         if self._memberSearchResultList is None:
             return None
         for member in self._memberSearchResultList:
-            if member.getUserName() == userName:
+            if member.getUserName() == self._userName:
                 return member
         return None
         
-    def getMatchId(self,userName):
-        member = self.match(userName)
+    def getMatchId(self):
+        member = self.match()
         if member is not None:
             return member.getUserId()
 
