@@ -6,9 +6,11 @@ class login:
 
     def __init__(self,id = None,password = None):
         #iniファイル読み込み
-        self._loginInfo = inifile()
-        #ログイン情報設定
-        self.setLoginInfo(id,password)
+        if id is None or password is None:
+        	self._loginInfo = inifile()
+        else :
+        	#ログイン情報設定
+	        self.setLoginInfo(id,password)
 
     
     def setUserName(self,id):
