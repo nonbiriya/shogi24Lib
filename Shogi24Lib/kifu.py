@@ -9,8 +9,7 @@ class kifu():
 #棋譜ファイルを出力
     def outputKifu(self,filename,kifu):
         os.makedirs("kifu",exist_ok=True)
-        print(os.getcwd())
-        f = open(filename,'x')
+        f = open(filename,'w')
         f.write(kifu)
         f.close()
 
