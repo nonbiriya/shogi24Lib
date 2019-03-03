@@ -20,7 +20,7 @@ class kifu():
         filename = "kifu/"
         filename += BattleResult.getMode()
         filename += "_"
-        filename += BattleResult.getDate().replace(' ', '_').replace(':','-')
+        filename += BattleResult.getDate().replace(' ', '_').replace(':','-').replace('/','-')
         filename += "_"
         filename += BattleResult.getFirstMoveName()
         filename += "_"
