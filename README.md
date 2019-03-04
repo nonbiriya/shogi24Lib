@@ -3,6 +3,7 @@
 BSD Licenseに準拠しています。
 
 # 使用例
+
 本ライブラリをプロジェクト下に配置してお使いください
 提供しているクラスは以下です
 
@@ -14,9 +15,12 @@ BSD Licenseに準拠しています。
 
 
 # inifile
+
 iniファイルを読み込むクラスです。
 setting.iniに将棋倶楽部２４のユーザ名とパスワードを設定してください。
+
 設定例
+
 ----------------------------
 [user]
 id=nonbiriya
@@ -32,7 +36,7 @@ inifile()で設定ファイルからユーザ名とパスワードを読み込�
 login()でユーザIDとパスワードをloginクラスに設定した後、doLogin()メソッドでログインし、セッションを返却します。
 
 # searchUser
-ユーザ検索ページ（https://web.shogidojo.net/24member/meibo/）をスクレイピングするクラスです。
+ユーザ検索ページ（https://web.shogidojo.net/24member/meibo/）　をスクレイピングするクラスです。
 searchUser()でセッションと検索対象のユーザ名を設定した後、search()で検索を行います。
 検索結果はgetMemberSearchResultList()で検索結果を取得できます。
 検索結果はmemberSearchResultクラスに格納されます。
